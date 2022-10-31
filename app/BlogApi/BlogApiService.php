@@ -9,6 +9,7 @@ use App\BlogApi\Data\Responses\Article;
 use App\BlogApi\Adapters\BlogApiAdapter;
 use App\BlogApi\Data\Responses\BlogResponse;
 use App\BlogApi\Contracts\BlogApiServiceContract;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
 class BlogApiService extends BlogResponse implements BlogApiServiceContract
@@ -50,6 +51,8 @@ class BlogApiService extends BlogResponse implements BlogApiServiceContract
 
         $postCount = 0;
 
+        $admin =  User::systemAdmin()->id;
+
         foreach ($blogFeed as $response) {
 
 
@@ -61,7 +64,8 @@ class BlogApiService extends BlogResponse implements BlogApiServiceContract
 
             foreach ($this->articles as $article) {
 
-                $article['created_at'] = $article['publishedAt'];
+                $artile['created_at'] = $article['publishedAt'];
+                $article['user_id'] = $admin;
 
                 $postData = Article::fromArray($article);
 

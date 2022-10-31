@@ -37,9 +37,4 @@ class Article extends Data
      * @var string
      */
     public string $created_at;
-
-    public function __construct()
-    {
-        $this->user_id = User::systemAdmin()->id;
-    }
 }
