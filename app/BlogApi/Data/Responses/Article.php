@@ -4,6 +4,7 @@ namespace App\BlogApi\Data\Responses;
 
 use App\Enums\PostStatus;
 use App\BlogApi\Data\Data;
+use App\Models\User;
 
 class Article extends Data
 {
@@ -24,19 +25,21 @@ class Article extends Data
      *
      * @var integer
      */
-    public int $user_id = 1;
-
+    public int $user_id;
     /**
      * Publication status
      *
      * @var string
      */
     public string $status = PostStatus::PUBLISHED;
-
     /**
      * Publication Time
      * @var string
      */
-
     public string $created_at;
+
+    public function __construct()
+    {
+        $this->user_id = User::systemAdmin()->id;
+    }
 }
