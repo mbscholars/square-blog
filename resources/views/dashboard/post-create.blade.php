@@ -66,6 +66,7 @@
                         <div class="mt-4 ">
                             <label for="category" class="block text-sm font-medium text-gray-700">Post Content
                             </label>
+                            <!-- TODO: REPLACE TEXTAREA WITH TEXT EDITOR -->
                             <textarea name="description" rows="12" id="description"
                                 class="form-control  @error('description') is-invalid @enderror">{{ old('description') ?? 'Enter text here' }}</textarea>
 
