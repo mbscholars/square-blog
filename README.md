@@ -28,7 +28,11 @@ You can also change other options such as the number of posts to show in a page 
 SQUARE_POSTS_PER_PAGE=6 
 SQUARE_USE_TEST_MOCKS=true
 ```
- 
+Generate your application key
+```
+php artisan key:generate 
+```
+
 Run Migrations:
 
 ```bash
@@ -50,5 +54,4 @@ php artisan test
 
 ASSETS 
 - Writing icons created by Freepik - Flaticon [https://www.flaticon.com/free-icons/writing] 
-- 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+- The MIT License (MIT). Please see [License File](LICENSE.md) for more information.

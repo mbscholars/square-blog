@@ -16,7 +16,7 @@ class BlogTest extends TestCase
     public function test_blog_posts_can_be_fetched()
     {
 
-        $posts = Blog::index();
+        $posts = Blog::index('blog');
 
         $this->assertInstanceOf(LengthAwarePaginator::class, $posts, "Blog Index returns a valid response");
     }

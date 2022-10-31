@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Jobs\BlogApi\Jobs;
+namespace App\Jobs;
 
 use Illuminate\Bus\Queueable;
 use App\BlogApi\Facades\BlogApi;
